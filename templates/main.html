@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/style1.css') }}">
+    <!-- Box icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body>  
+    <!-- Header -->
+    <header>
+        <!-- navbar -->
+        <div class="nav container">
+            <!-- logo -->
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+             </a>
+            <!-- Navbar -->
+             <div class="navbar">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#items" class="nav-link">Featured Items</a>
+                <a href="#menu-container" class="nav-link">Menu</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#newsletter" class="nav-link">For You</a>
+             </div>
+            <!-- Nav Icons -->
+             <div class="nav-icons">
+                <a href="#"><i class='bx bx-user'></i></a>
+                <a href="#" class="cart">
+                    <i class='bx bx-shopping-bag'></i>
+                </a>
+                <!-- Menu icon -->
+                <div class="menu-icon">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+             </div>
+        </div>
+    </header>
+    <!-- Home -->
+    <section class="home" id="home">
+        <div class="home-content container">
+            <div class="home-text">
+                <h2> 
+                  Alfredo Pasta,<br>
+                  Burger
+                </h2>
+                <p>Special Deal only on FRIDAY every week..!</p>
+                <h3>Buy 1 Get One FREE!</h3>
+                <a href="{{ url_for('menu') }}" class="btn">Order NOW!</a><br>
+                <a href="{{ url_for('view_orders') }}" class="btn">View Orders</a> 
+
+            </div>
+            <!-- HOMEIMAGE -->
+            <img src="{{ url_for('static', filename='images/home.png') }}" alt="HOME" class="home-img" />
+        </div>
+        <!-- HOME MASK -->
+         <img src="{{ url_for('static', filename='images/home-mask.png') }}" alt="" class="home-mask" />
+    </section>
+    <!-- Features -->
+    <div class="features container" id="feature">
+        <div class="feature-box">
+            <img src="{{ url_for('static', filename='images/feature-1.svg') }}" alt="" class="feature-img" />
+            <div class="feature-text">
+                <h3>Quality Food</h3>
+                <p>&nbsp;Made from premium material</p>
+            </div>
+        </div>
+        <div class="feature-box">
+            <img src="{{ url_for('static', filename='images/feature-2.svg') }}" alt="" class="feature-img" />
+            <div class="feature-text">
+                <h3>Fast Delivery</h3>
+                <p>&nbsp;Receives Good in 45 Mins</p>
+            </div>
+        </div>
+        <div class="feature-box">
+            <img src="{{ url_for('static', filename='images/feature-3.svg') }}" alt="" class="feature-img" />
+            <div class="feature-text">
+                <h3>Timely Delivery</h3>
+                <p>Professional and Friendly services</p>
+            </div>
+        </div>
+        <div class="feature-box">
+            <img src="{{ url_for('static', filename='images/feature-4.svg') }}" alt="" class="feature-img" />
+            <div class="feature-text">
+                <h3>Secure Payments</h3>
+                <p>Our payment gateways are reliable</p>
+            </div>
+        </div>
+    </div>    
+    <!-- feature menu -->
+    <section class="feature-menu container" id="feature-menu">
+        <h2 class="heading">Pesto's Featured Menu</h2>
+        <div class="feature-menu-content">
+            <div class="feature-menu-box">
+                <img src="{{ url_for('static', filename='images/feature-bbq.png') }}" alt="">
+                <h3>BBQ</h3>
+                <p>(4 items)</p>
+            </div>
+            <div class="feature-menu-box">
+                <img src="{{ url_for('static', filename='images/feature-menu-2.png') }}" alt="">
+                <h3>Burgers</h3>
+                <p>(8 items)</p>
+            </div>
+            <div class="feature-menu-box">
+                <img src="{{ url_for('static', filename='images/feature-pasta.png') }}" alt="">
+                <h3>Pasta</h3>
+                <p>(4 items)</p>
+            </div>
+            <div class="feature-menu-box">
+                <img src="{{ url_for('static', filename='images/feature-menu-4.png') }}" alt="">
+                <h3>Drinks</h3>
+                <p>(4 items)</p>
+            </div>
+            <div class="feature-menu-box">
+                <img src="{{ url_for('static', filename='images/feature-biryani-1.png') }}" alt="">
+                <h3>Biryani</h3>
+                <p>(3 items)</p>
+            </div>
+            <div class="feature-menu-box">
+                <img src="{{ url_for('static', filename='images/feature-menu-6.png') }}" alt="">
+                <h3>Pizza</h3>
+                <p>(4 items)</p>
+            </div>
+        </div>
+    </section>
+     <!-- item -->
+    <section class="items" id="items">
+        <h2 class="heading container">Our Featured Items</h2>
+        <div class="item-content container">
+            <div class="item-box">
+                <span class="sale">Sale</span>
+                <img src="{{ url_for('static', filename='images/item-1.png') }}" alt="">
+                <h2>Spicy Burger</h2>
+                <div class="price">
+                    <h3>From Rs179/-</h3>
+                    <p>Rs490/-</p>
+                </div>
+                <a href="#" class="item-btn">View Products</a>   
+            </div>
+            <div class="item-box">
+                <span class="sale">Sale</span>
+                <img src="{{ url_for('static', filename='images/Paneer-bbq.png') }}" alt="">
+                <h2>Paneer BBQ</h2>
+                <div class="price">
+                    <h3>From Rs249/-</h3>
+                    <p>Rs480/-</p>
+                </div>
+                <a href="#" class="item-btn">View Products</a>   
+            </div>
+            <div class="item-box">
+                <span class="sale">Sale</span>
+                <img src="{{ url_for('static', filename='images/alootikki-burger.png') }}" alt="">
+                <h2>AlooTikki Burger</h2>
+                <div class="price">
+                    <h3>From Rs159/-</h3>
+                    <p>Rs320/-</p>
+                </div>
+                <a href="#" class="item-btn">View Products</a>   
+            </div>
+            <div class="item-box">
+                <span class="sale">Sale</span>
+                <img src="{{ url_for('static', filename='images/frenchfries.png') }}" alt="">
+                <h2>French Fries(Opt.)</h2>
+                <div class="price">
+                    <h3>From Rs119/-</h3>
+                    <p>Rs249/-</p>
+                </div>
+                <a href="#" class="item-btn">View Products</a>   
+            </div>
+            <div class="item-box">
+                <span class="sale">Sale</span>
+                <img src="{{ url_for('static', filename='images/biryani.png') }}" alt="">
+                <h2>Veg Dum Biryani</h2>
+                <div class="price">
+                    <h3>From Rs199/-</h3>
+                    <p>Rs320/-</p>
+                </div>
+                <a href="#" class="item-btn">View Products</a>   
+            </div>
+            <div class="item-box">
+                <span class="sale">Sale</span>
+                <img src="{{ url_for('static', filename='images/item-6.png') }}" alt="">
+                <h2>Mixes Pizza</h2>
+                <div class="price">
+                    <h3>From Rs179/-</h3>
+                    <p>Rs490/-</p>
+                </div>
+                <a href="#" class="item-btn">View Products</a>   
+            </div>
+            <div class="item-box">
+                <span class="sale">Sale</span>
+                <img src="{{ url_for('static', filename='images/item-7.png') }}" alt="">
+                <h2>Meta Burger</h2>
+                <div class="price">
+                    <h3>From Rs179/-</h3>
+                    <p>Rs490/-</p>
+                </div>
+                <a href="#" class="item-btn">View Products</a>   
+            </div>
+            <div class="item-box">
+                <span class="sale">Sale</span>
+                <img src="{{ url_for('static', filename='images/Pasta.png') }}" alt="">
+                <h2>Alfredo pasta</h2>
+                <div class="price">
+                    <h3>From Rs299/-</h3>
+                    <p>Rs549/-</p>
+                </div>
+                <a href="#" class="item-btn">View Products</a>   
+            </div>
+        </div>
+    </section>
+    <!-- Menu -->
+    <section class="menu-container" id="menu-container">
+        <h2 class="heading container">Pesto's Featured menu Board</h2>
+            <img src="{{ url_for('static', filename='images/menu-mask.png') }}" alt="" class="menu-mask" />
+            <div class="menu-content container">
+                <div class="menu-box">
+                    <h2>Burgers</h2>
+                    <div class="burgers-content">
+                        <div class="m-item-box">
+                            <img src="{{ url_for('static', filename='images/burger-1.png') }}" alt="">
+                            <div class="m-item-right">
+                                <div class="m-item-des">
+                                    <h3>Meta Burger</h3>
+                                    <p>Size: Medium Small Large Species:Regular Spicy Medium</p>
+                                </div>
+                                <div class="m-item-price">
+                                    <h3>From Rs179</h3>
+                                    <p>Rs490</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-item-box">
+                            <img src="{{ url_for('static', filename='images/burger-2.png') }}" alt="">
+                            <div class="m-item-right">
+                                <div class="m-item-des">
+                                    <h3>Spicy Meta Burger</h3>
+                                    <p>Size: Medium Small Large Species:Regular Spicy Medium</p>
+                                </div>
+                                <div class="m-item-price">
+                                    <h3>From Rs199</h3>
+                                    <p>Rs340</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-item-box">
+                            <img src="{{ url_for('static', filename='images/burger-3.png') }}" alt="">
+                            <div class="m-item-right">
+                                <div class="m-item-des">
+                                    <h3>Spicy Burger</h3>
+                                    <p>Size: Medium Small Large Species:Regular Spicy Medium</p>
+                                </div>
+                                <div class="m-item-price">
+                                    <h3>From Rs219</h3>
+                                    <p>Rs408</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-item-box">
+                            <img src="{{ url_for('static', filename='images/alootikki-burger.png') }}" alt="">
+                            <div class="m-item-right">
+                                <div class="m-item-des">
+                                    <h3>AlooTikki Burger</h3>
+                                    <p>Size: Medium Small Large Species:Regular Spicy Medium</p>
+                                </div>
+                                <div class="m-item-price">
+                                    <h3>From Rs159</h3>
+                                    <p>Rs320</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-box">
+                    <h2>BBQ and Others</h2>
+                    <div class="bbq-content">
+                        <div class="m-item-box">
+                            <img src="{{ url_for('static', filename='images/Paneer-bbq.png') }}" alt="">
+                            <div class="m-item-right">
+                                <div class="m-item-des">
+                                    <h3>Paneer BBQ</h3>
+                                    <p>Size: Medium Small Large Species:Regular Spicy Medium</p>
+                                </div>
+                                <div class="m-item-price">
+                                    <h3>From Rs249</h3>
+                                    <p>Rs480</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-item-box">
+                            <img src="{{ url_for('static', filename='images/biryani.png') }}" alt="">
+                            <div class="m-item-right">
+                                <div class="m-item-des">
+                                    <h3>Veg Biryani</h3>
+                                    <p>Size: Medium Small Large Species:Regular Spicy Medium</p>
+                                </div>
+                                <div class="m-item-price">
+                                    <h3>From Rs199</h3>
+                                    <p>Rs320</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-item-box">
+                            <img src="{{ url_for('static', filename='images/Pasta.png') }}" alt="">
+                            <div class="m-item-right">
+                                <div class="m-item-des">
+                                    <h3>Alfredo Pasta</h3>
+                                    <p>Size: Medium Small Large Species:Regular Spicy Medium</p>
+                                </div>
+                                <div class="m-item-price">
+                                    <h3>From Rs299</h3>
+                                    <p>Rs549</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-item-box">
+                            <img src="{{ url_for('static', filename='images/Pizza-item.png') }}" alt="">
+                            <div class="m-item-right">
+                                <div class="m-item-des">
+                                    <h3>Margarita Pizza</h3>
+                                    <p>Size: Medium Small Large Species:Regular Spicy Medium</p>
+                                </div>
+                                <div class="m-item-price">
+                                    <h3>From Rs159</h3>
+                                    <p>Rs299</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Testimonial Reviews-->
+    <section class="testimonials" id="testimonials">
+        <h2 class="heading container">Reviews</h2>
+            <div class="testimonials-content container">
+                <div class="t-box">
+                    <div class="stars">
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                    </div>
+                    <p>
+                        "Truely one of the amazing burger chains we have eaten at! Customer 
+                        service is also good. Beautiful presentation .amazing taste, and
+                        good staff, awesome. Their mac mince cheeseburger with olive sauce
+                        is very tasty."
+                    </p>
+                    <div class="profile">
+                        <img src="{{ url_for('static', filename='images/profile-1.png') }}" alt=""/>
+                        <div class="profile-data">
+                            <h3>Alfredo bator</h3>
+                            <span>Hair Stylist</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="t-box">
+                    <div class="stars">
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                    </div>
+                    <p>
+                        "They make my favourite burgers. I can't find a better one. I pretty
+                        much love BIG King XXL, the best in the world! Healthy choices and
+                        consciousness of the environment. Everything was delicious."
+                    </p>
+                    <div class="profile">
+                        <img src="{{ url_for('static', filename='images/profile-2.png') }}" alt=""/>
+                        <div class="profile-data">
+                            <h3>Sadiq Parker</h3>
+                            <span>Art Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="t-box">
+                    <div class="stars">
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                    </div>
+                    <p>
+                        "They make my favourite burgers. I can't find a better one. I pretty
+                        much love BIG King XXL, the best in the world! Healthy choices and
+                        consciousness of the environment. Everything was delicious."
+                    </p>
+                    <div class="profile">
+                        <img src="{{ url_for('static', filename='images/profile-3.png') }}" alt=""/>
+                        <div class="profile-data">
+                            <h3>Ibrahim Apan</h3>
+                            <span>Hair Stylist</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="t-box">
+                    <div class="stars">
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                        <i class="bx bxs-star" ></i>
+                    </div>
+                    <p>
+                        "Truely one of the amazing burger chains we have eaten at! Customer 
+                        service is also good. Beautiful presentation .amazing taste, and
+                        good staff, awesome. Their mac mince cheeseburger with olive sauce
+                        is very tasty."
+                    </p>
+                    <div class="profile">
+                        <img src="{{ url_for('static', filename='images/profile-4.png') }}" alt=""/>
+                        <div class="profile-data">
+                            <h3>Jonathan Parker</h3>
+                            <span>Music Producer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Newsletter/ -->
+    <section class="newsletter container" id="newsletter">
+        <h2>Subscribe and Get 10% Discount</h2>
+        <p>Be the first to get the latest news, promotions and much more.</p>
+        <form action="">
+            <input type="email" name="" id="" class="email" placeholder="Email" required>
+            <input type="submit" value="Subscribe" class="s-btn">
+        </form>
+        <br>
+    </section>
+    <br>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content container">
+            <div class="footer-box">
+                <a href="#" class="footer-logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="">
+                </a>
+                <p></p>
+                <p>Near Socials, Hauz khas, New Delhi-444980</p>
+                <div class="social">
+                    <a href="#"><i class="bx bxl-instagram"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bx-x"></i></a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>Opening Hours</h3>
+                <p><span>Mon  </span>: 9:00 - 20:30</p>
+                <p><span>Tues </span>: 9:00 - 20:30</p>
+                <p><span>Wed  </span>: 9:00 - 20:30</p>
+                <p><span>Thurs</span>: 9:00 - 20:30</p>
+                <p><span>Fri  </span>: 9:00 - 20:30</p>
+                <p><span>Sat  </span>: 9:00 - 20:30</p>
+                <p><span>Sun  </span>: Closed</p>
+            </div>
+            <div class="footer-box">
+                <h3>Information</h3>
+                <a href="#"> About us</a>
+                <a href="#"> Blog</a>
+                <a href="#"> Gallery</a>
+                <a href="#"> Reviews</a>
+            </div>
+            <div class="footer-box">
+                <h3>Contact Us:</h3>
+                <p>+91-6396032520</p>
+                <p>support@pesto.gmail.in</p>
+                <p>Address:Near Socials, Hauz khas, New Delhi-444980 </p>
+            </div>
+        </div>
+        <p class="copyright">&#169; 2025,Pesto Restaurant-224401</p>
+    </div>
+    <!--Scrolling  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- link To js-->
+    <script src="{{ url_for('static', filename='js/main1.js') }}"></script>
+</body>
+</html>
+

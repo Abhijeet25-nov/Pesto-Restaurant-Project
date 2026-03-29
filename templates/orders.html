@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>ViewTable</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white-300 text-gray-800 font-sans p-6">
+    <div class="w-full mx-auto mt-10">
+    <h1 class="text-3xl font-bold mb-6 text-center text-red-600">Restaurant-PESTO ORDERS</h1>
+     <div class="flex justify-end mb-4">
+        <a href="{{ url_for('home') }}" class="bg-blue-400 hover:bg-gray-500 text-white px-5 py-2 rounded-md shadow">
+                Home</a>
+        </div>          
+    <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
+        <table class="w-full text-base text-center">
+          <div class="min-w-full bg-white mt-4 rounded shadow">
+            <tr class="bg-gray-200 text-gray-700 uppercase text-sm">
+                <th class="py-3">Order ID</th>
+                <th class="py-3">Name</th>
+                <th class="py-3">Phone</th>
+                <th class="py-3">Address</th>
+                <th class="py-3">Dish</th>
+                <th class="py-3">Price</th>
+                <th class="py-3">Action</th>
+            </tr>
+            {% for r in rows %}
+            <tr class="border-b hover:bg-gray-100">
+                <td  class="py-3">{{r[0]}}</td>
+                <td  class="py-3">{{r[1]}}</td>
+                <td  class="py-3">{{r[2]}}</td>
+                <td  class="py-3">{{r[5]}}</td>
+                <td  class="py-3">{{r[3]}}</td>
+                <td  class="py-3">{{r[4]}}</td>
+                <td  class="py-3"><a href="{{ url_for('delete_order', order_code=r[0]) }}" class="bg-green-600 hover:bg-gray-500 text-white px-5 py-2 rounded-md shadow" onclick="return confirm('Is this order is DELIVERED?');">Delivered</a></td>
+            </tr>
+            {% endfor %}
+           </div>  
+        </table>
+    <div> 
+</body>
+</html>
+
+
+
+
+
+

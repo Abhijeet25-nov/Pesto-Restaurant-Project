@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+    <!-- Box icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+
+</head>
+<body>  
+    <!-- Header -->
+    <header>
+        <!-- navbar -->
+        <div class="nav container">
+            <!-- logo -->
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+             </a>
+            <!-- Navbar -->
+             <div class="navbar">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#items" class="nav-link">Featured Items</a>
+                <a href="#menu-container" class="nav-link">Menu</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#newsletter" class="nav-link">For You</a>
+             </div>
+            <!-- Nav Icons -->
+             <div class="nav-icons">
+                <a href="#"><i class='bx bx-user'></i></a>
+                <div class="cart-icon" id="cart-icon">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span id="cart-count">0</span>
+                </div>
+                <!-- Menu icon -->
+                <div class="menu-icon">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+             </div>
+        </div>
+    </header>
+
+    <section class="menu" id="order-menu">
+        <h2 class="heading">Make Your Order!</h2>
+        <h4 class="h4">Choose your items to get Deliver to you..</h4>
+            <div class="products container">
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/alootikki-burger.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Aloo Tikki Burger</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs179/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/burger-2.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Spicy Meta Burger</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs199/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart"  onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/burger-3.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Spicy(Cheese) Burger</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs219/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart"  onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/burger-1.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Double Meta Burger</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs179/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/biryani.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Veg Hyd. Biryani</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs199/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/Pasta.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Alfredo Pasta & Garlic bread</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs299/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/Paneer-bbq.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Grilled Panner</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs249/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/Pizza-item.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Margarita Pizza</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs159/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/coca.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Coke(By your choice)</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs79/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/frenchfries.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Fries</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs.119/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/rolls.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Rolls</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs.129/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/noodles.png') }}" alt="" class="product-image"/>
+                    <h2 class="product-name">Noodles</h2>
+                    <div class="product-info">
+                        <div class="price-data">
+                            <h2 class="product-price">Rs.139/-</h2>
+                            <p class="txs">Incl. all Taxes-</p>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-model" id="cart-model">
+                <div class="cart-head">
+                    <h2>Your Cart</h2>
+                    <button class="close-btn">X</button>
+                </div>
+                <ul id="cart-items">
+
+                </ul>
+                <div class="cart-total">Total: Rs.<span id="total-price">0</span></div>
+                <form id="checkout-form" method="POST" action="{{ url_for('checkout') }}">
+                    <input type="hidden" name="cart" id="cart-input">
+                    <button type="submit" class="checkout-btn">Checkout</button>
+                </form>
+            </div>
+    </section>  
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+</body>
+</html>        

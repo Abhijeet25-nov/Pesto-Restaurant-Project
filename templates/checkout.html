@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <!-- navbar -->
+        <div class="nav container">
+            <!-- logo -->
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+             </a>
+            <!-- Navbar -->
+             <div class="navbar">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#items" class="nav-link">Featured Items</a>
+                <a href="#menu-container" class="nav-link">Menu</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#newsletter" class="nav-link">For You</a>
+             </div>
+            <!-- Nav Icons -->
+             <div class="nav-icons">
+                <a href="#"><i class='bx bx-user'></i></a>
+                <a href="#" class="cart">
+                    <i class='bx bx-shopping-bag'></i>
+                </a>
+                <!-- Menu icon -->
+                <div class="menu-icon">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+             </div>
+        </div>
+    </header>
+
+    <section class="main-container">
+
+    <div class="card">
+        <div class="ribbon">Your Order Summary</div>
+            <br><br>
+            {% set ns = namespace(total=0) %}
+
+            {% for item in items %}
+            <div class="item-row">
+                <span>{{ item.name }} x{{ item.quantity }}</span>
+                <span>₹{{ item.price * item.quantity }}</span>
+            </div>
+            {% set ns.total = ns.total + (item.price * item.quantity) %}
+            {% endfor %}
+
+        <div class="item-row">
+            <span>Delivery Charges</span>
+            <span>₹40</span>
+        </div>
+        <br><br><br>
+        <div class="total-box">
+            Total Amount:&nbsp;
+            <div class="total-price">₹{{ ns.total + 40 }}</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="ribbon">Delivery Details</div>
+        <br>
+        <form method="POST" action="{{ url_for('place_order') }}">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <textarea name="address" placeholder="Full Delivery Address" required></textarea>
+            <select name="payment" required>
+                <option value="COD">Cash On Delivery</option>
+                <option value="UPI">UPI</option>
+                <option value="Card">Card</option>
+            </select>
+
+            <!-- cart JSON -->
+            <input type="hidden" name="cart" value='{{ items|tojson }}'>
+            <button type="submit" class="order-btn">Place Order</button>
+        </form>
+    </div>
+
+    </section>
+
+    <div class="delivery-time">
+    Estimated Delivery Time: <strong>40 - 45 Mins</strong>
+    </div>
+
+</body>
+</html>

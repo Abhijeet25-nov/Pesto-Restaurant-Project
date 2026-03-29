@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You - Pesto</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<script>
+    sessionStorage.removeItem("cartItems");
+</script>
+<body>
+    <header>
+        <!-- navbar -->
+        <div class="nav container">
+            <!-- logo -->
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+             </a>
+            <!-- Navbar -->
+             <div class="navbar">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#items" class="nav-link">Featured Items</a>
+                <a href="#menu-container" class="nav-link">Menu</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#newsletter" class="nav-link">For You</a>
+             </div>
+            <!-- Nav Icons -->
+             <div class="nav-icons">
+                <a href="#"><i class='bx bx-user'></i></a>
+                <a href="#" class="cart">
+                    <i class='bx bx-shopping-bag'></i>
+                </a>
+                <!-- Menu icon -->
+                <div class="menu-icon">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+             </div>
+        </div>
+    </header>
+
+    <div class="thankyou-container">
+    <h1>Thank You for Choosing Us!</h1>
+    <p>Your Order Has Been Placed Successfully</p>
+
+    <div class="timeline">
+        <div class="progress" id="progress"></div>
+    </div>
+    <p id="status">Preparing your food...</p>
+    <div class="order-summary">
+        <h2>Order Details</h2>
+        <br>
+        <p><strong>Order ID:</strong> {{ order_code }}</p><br>
+        <p><strong>Name:</strong> {{ customer[0] }}</p><br>
+        <p><strong>Phone:</strong> {{ customer[1] }}</p><br>
+        <hr>
+        {% for name, qty, price in items %}
+        <div class="item-row">
+            <span>{{ name }} x{{ qty }}</span>
+            <span>₹{{ qty * price }}</span>
+        </div>
+        {% endfor %}
+
+        <div class="item-row">
+            <span>Delivery Charges</span>
+            <span>₹{{ delivery }}</span>
+        </div>
+        <br>
+        <div class="total-box">
+            Grand Total: 
+            <div class="total-price">₹{{ grand_total }}</div>
+        </div>
+        <br>
+        <br>
+        <a href="{{ url_for('home') }}" class="order-btn">← Back to Menu</a>
+    </div>
+    
+    </div>
+    <script>localStorage.removeItem("cartItems");</script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
