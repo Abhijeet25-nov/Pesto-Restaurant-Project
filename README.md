@@ -101,6 +101,35 @@ Run this command in psql or in pgAdmin4:
 CREATE DATABASE restaurant;
 ```
 
+---
+Pictures of Website
+1. First Opening page:
+<img width="1920" height="1080" alt="Screenshot (191)" src="https://github.com/user-attachments/assets/eb1ecbc8-e995-4e77-8f3d-7280c839c77f" />
+<img width="1920" height="1080" alt="Screenshot (192)" src="https://github.com/user-attachments/assets/50055bf4-5443-4cfa-a3c4-762b4e279aad" />
+<img width="1920" height="1080" alt="Screenshot (193)" src="https://github.com/user-attachments/assets/ea4e2252-5f7e-49ce-8ebc-6075fc8eac6b" />
+-
+
+2. Second Menu Page:
+<img width="1920" height="1080" alt="Screenshot (194)" src="https://github.com/user-attachments/assets/2ffcefa1-c722-4ac6-af6f-5477936303cf" />
+
+-
+3. Checkout sidebar:
+<img width="1920" height="1080" alt="Screenshot (195)" src="https://github.com/user-attachments/assets/6c0603a5-f4ae-470b-9490-7ca85c11d923" />
+
+-
+4. Details from customer side:
+<img width="1920" height="1080" alt="Screenshot (198)" src="https://github.com/user-attachments/assets/627112b1-5713-44f8-8988-63832dfb063f" />
+
+-
+5. Final Page:
+<img width="1920" height="1080" alt="Screenshot (190)" src="https://github.com/user-attachments/assets/e6a4e495-ffe6-4e47-af02-5cfac03e5f4a" />
+
+-
+6. View Orders by Admin:
+<img width="1920" height="1080" alt="Screenshot (200)" src="https://github.com/user-attachments/assets/5dd120f2-f52d-41b2-9d54-01db85bb02d2" />
+---
+
+
 ## Developer
 Abhijeet
 
