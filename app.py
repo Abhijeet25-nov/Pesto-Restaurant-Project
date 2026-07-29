@@ -2,16 +2,20 @@ from flask import Flask, render_template, request, redirect, url_for
 import psycopg2
 import json
 import random
+import os
 
 app = Flask(__name__)
 
+# def get_conn():
+#     return psycopg2.connect(
+#         host="localhost",
+#         database="restaurant",
+#         user="postgres",
+#         password="root"
+#     )
+
 def get_conn():
-    return psycopg2.connect(
-        host="localhost",
-        database="restaurant",
-        user="postgres",
-        password="root"
-    )
+    return psycopg2.connect(os.environ["DATABASE_URL"])
 
 def generate_order_code():
     return "P" + str(random.randint(1000,9999))
