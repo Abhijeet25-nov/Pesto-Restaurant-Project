@@ -17,6 +17,35 @@ app = Flask(__name__)
 def get_conn():
     return psycopg2.connect(os.environ["DATABASE_URL"])
 
+def create_tables():
+    conn = psycopg2.connect(os.environ["DATABASE_URL"])
+    cur = conn.cursor()
+
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS orders (
+            id SERIAL PRIMARY KEY,
+            customer_name VARCHAR(100),
+            address TEXT,
+            phone VARCHAR(20),
+            order_code VARCHAR(10) UNIQUE,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+        """)
+
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS order_items (
+            id SERIAL PRIMARY KEY,
+            order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
+            dish_name VARCHAR(100),
+            price NUMERIC(10,2),
+            quantity INTEGER
+        );
+        """)
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
 def generate_order_code():
     return "P" + str(random.randint(1000,9999))
 
