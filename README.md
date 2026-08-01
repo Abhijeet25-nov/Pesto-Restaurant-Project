@@ -5,8 +5,6 @@ This project allows customers to browse menus, place orders, and enables restaur
 
 ---
 
-### **Live Site** : [Visit the Restaurant-Site](https://pesto-restaurant-project.onrender.com)
-
 ##  Features
 
 ###  Customer Side
