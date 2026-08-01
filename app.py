@@ -3,8 +3,8 @@ import psycopg2
 import json
 import random
 import os
-from flask_mail import Mail, Message
-from email_service import send_order_email
+# from flask_mail import Mail, Message
+# from email_service import send_order_email
 
 app = Flask(__name__)
 
@@ -16,14 +16,6 @@ app = Flask(__name__)
 #         password="root"
 #     )
 
-app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 587
-app.config["MAIL_USE_TLS"] = True
-
-app.config["MAIL_USERNAME"] = "absaxena2004@gmail.com"
-app.config["MAIL_PASSWORD"] = "czpidyizcvkkmavv"
-
-mail = Mail(app)
 
 
 def get_conn():
@@ -106,15 +98,6 @@ def place_order():
         )
 
     conn.commit()
-    
-    send_order_email(
-    mail,
-    name,
-    phone,
-    address,
-    order_code,
-    cart
-    )
     
     cur.close()
     conn.close()
