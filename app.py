@@ -3,6 +3,8 @@ import psycopg2
 import json
 import random
 import os
+from flask_mail import Mail, Message
+from email_service import send_order_email
 
 app = Flask(__name__)
 
@@ -13,6 +15,16 @@ app = Flask(__name__)
 #         user="postgres",
 #         password="root"
 #     )
+
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 587
+app.config["MAIL_USE_TLS"] = True
+
+app.config["MAIL_USERNAME"] = "absaxena2004@gmail.com"
+app.config["MAIL_PASSWORD"] = "@Abhi_25#04"
+
+mail = Mail(app)
+
 
 def get_conn():
     return psycopg2.connect(os.environ["DATABASE_URL"])
@@ -48,6 +60,7 @@ def create_tables():
 
 create_tables()
 
+
 def generate_order_code():
     return "P" + str(random.randint(1000,9999))
 
@@ -71,6 +84,7 @@ def checkout():
 
 @app.route("/place-order", methods=["POST"])
 def place_order():
+    
     name=request.form["name"]
     address=request.form["address"]
     phone=request.form["phone"]
@@ -92,10 +106,21 @@ def place_order():
         )
 
     conn.commit()
+    
+    send_order_email(
+    mail,
+    name,
+    phone,
+    address,
+    order_code,
+    cart
+    )
+    
     cur.close()
     conn.close()
 
     return redirect(url_for("thankyou", order_id=order_id))
+
 
 @app.route("/thankyou")
 def thankyou():
@@ -186,3 +211,4 @@ def delete_order():
 
 if __name__=="__main__":
     app.run(debug=True)
+    
